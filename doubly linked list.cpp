@@ -1,7 +1,8 @@
 #include<iostream>
 using namespace std;
-struct node
+class node
 {
+    public:
     int data;
     node *next;
     node *prev;
@@ -12,7 +13,7 @@ int main()
     head=0;
     while(choice)
     {
-        newnode=(node*)malloc(sizeof(struct node));
+        newnode=new Node();
         cout<<"enter data\n";
         cin>>newnode->data;
         newnode->prev=0;
@@ -29,9 +30,11 @@ int main()
             temp=newnode;
         }
         cout<<"do you want to continue\n";
+        cout<<"press 1 for continue or 0 to exit\n";
         cin>>choice;
     }
     temp=head;
+    //printing the doubly linked list
     while(temp!=0)
     {
         cout<<temp->data<<" ";
